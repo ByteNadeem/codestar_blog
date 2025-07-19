@@ -4,6 +4,9 @@ from cloudinary.models import CloudinaryField
 
 
 class About(models.Model):
+    """
+    Stores a single blog post entry related to :model:`auth.User`.
+    """
     title = models.CharField(max_length=200, unique=True)
     profile_image = CloudinaryField('image', default='placeholder')
     updated_on = models.DateTimeField(auto_now=True)
